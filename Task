@@ -1,0 +1,300 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Task {
+
+    // Проверка вводимого числа
+    public int readInt(Scanner scanner) {
+        while (true) {
+            System.out.print("Введите целое число: ");
+            if (scanner.hasNextInt()) {
+                int num = scanner.nextInt();
+                return num;
+            } else {
+                System.out.println("Ошибка: введите целое число!");
+                scanner.next(); // очищаем неверный ввод
+            }
+        }
+    }
+
+    // Метод чтения символа с клавиатуры
+    public char readChar(Scanner scanner) {
+        while (true) {
+            System.out.print("Введите одну букву: ");
+            String input = scanner.nextLine();
+
+
+            if (input.length() == 1 && Character.isLetter(input.charAt(0))) {
+                return input.charAt(0);
+            } else {
+                System.out.println("Ошибка: нужно ввести одну букву!");
+            }
+        }
+    }
+
+    // Метод для вывода массива
+    public void printArray(int[] arr) {
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    // Задание 1. Методы №2
+    public int sumLastNums(int x) {
+        if (x / 10 > 0) {
+            int last = x % 10; // последняя цифра
+            int preLast = (x / 10) % 10; // предпоследняя цифра
+            return last + preLast;
+        } else {
+            System.out.println("Ошибка: число должно содержать хотя бы две цифры!");
+            return 0;
+        }
+
+    }
+
+    // Задание 1. Методы №4
+    public boolean isPositive(int x) {
+        return x > 0;
+    }
+
+    // Задание 1. Методы №6
+    public boolean isUpperCase(char x) {
+        return x >= 'A' && x <= 'Z';
+    }
+
+    // Задание 1. Методы №8
+    public boolean isDivisor(int a, int b) {
+        if (a == 0 || b == 0) {
+            return false; // деление на ноль исключаем
+        }
+        return (a % b == 0) || (b % a == 0);
+    }
+
+    // Задание 1. Методы №10
+    public int lastNumSum(int a, int b) {
+        Scanner scanner = new Scanner(System.in);
+        int total = (a % 10) + (b % 10);
+        System.out.println(a + " + " + b + " = " + total);
+        for (int i = 1; i < 4; i++) {
+            System.out.println("Введите число: ");
+            int next = scanner.nextInt();
+            int result = (total % 10) + (next % 10);
+            System.out.println(total + " + " + next + " = " + result);
+            total = result; // обновляем текущее значение
+        }
+        return total;
+    }
+
+    // Задание 2. Условия №2
+    public double safeDiv(int x, int y) {
+        if (y == 0) {
+            return 0; // если делитель 0, возвращаем 0
+        } else {
+            return x / y; // иначе выполняем деление
+        }
+    }
+
+    // Задание 2. Условия №4
+    public String makeDecision(int x, int y) {
+        if (x > y) {
+            return x + " > " + y;
+        } else if (x < y) {
+            return x + " < " + y;
+        } else {
+            return x + " = " + y;
+        }
+    }
+
+    // Задание 2. Условия №6
+    public boolean sum3(int x, int y, int z) {
+        if (x + y == z || x + z == y || z + y == x) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // Задание 2. Условия №8
+    public String age(int x) {
+        if (x % 10 == 1 && x != 11) {
+            return x + " год";
+        } else if ((x % 10 == 2 || x % 10 == 3 || x % 10 == 4) && x != 12 && x != 13 && x != 14) {
+            return x + " года";
+        } else {
+            return x + " лет";
+        }
+    }
+
+    // Задание 2. Условия №10
+    public void printDays(String x) {
+        switch (x) {
+            case "понедельник":
+                System.out.println("понедельник");
+            case "вторник":
+                System.out.println("вторник");
+            case "среда":
+                System.out.println("среда");
+            case "четверг":
+                System.out.println("четверг");
+            case "пятница":
+                System.out.println("пятница");
+            case "суббота":
+                System.out.println("суббота");
+            case "воскресенье":
+                System.out.println("воскресенье");
+                break;
+            default:
+                System.out.println("это не день недели");
+                break;
+        }
+    }
+
+    // Задание 3. Циклы №2
+    public String reverseListNums(int x) {
+        String s = "";
+        for (int i = x; i >= 0; i--) {
+            s = s + i + " ";
+        }
+
+        return s;
+    }
+
+    // Задание 3. Циклы №4
+    public int pow(int x, int y) {
+        int result = 1;
+
+        for (int i = 0; i < y; i++) {
+            result *= x;  // умножаем result на x y раз
+        }
+
+        return result;
+    }
+
+    // Задание 3. Циклы №6
+    public boolean equalNum(int x) {
+        int lastDigit = x % 10;
+        x /= 10;
+
+
+        while (x > 0) {
+            int currentDigit = x % 10;
+            if (currentDigit != lastDigit) {
+                return false;
+            }
+            x /= 10;
+        }
+
+        return true;
+    }
+
+    // Задание 3. Циклы №8
+    public void leftTriangle(int x) {
+        String s = "";
+        for (int i = 1; i <= x; i++) {
+            s = s + "*";
+            System.out.println(s);
+        }
+    }
+
+    // Задание 3. Циклы №10
+    public void guessGame() {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int rand = random.nextInt(0, 10);
+
+        System.out.println("Введите число от 0-9:");
+        int number = scanner.nextInt();
+
+        int attempts = 1;
+
+        while (true) {
+            if (rand == number) {
+                System.out.println("Вы угадали!");
+                System.out.println("Вы отгадали число за " + attempts + " попытки");
+                break;
+            } else {
+                System.out.println("Вы не угадали, введите число от 0 до 9:");
+                ++attempts;
+                number = scanner.nextInt();
+            }
+        }
+    }
+
+    // Задание 4. Циклы №2
+    public int findLast(int[] arr, int x) {
+        // Проходим массив с конца
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == x) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    // Задание 4. Циклы №4
+    public int[] add(int[] arr, int x, int pos) {
+        int[] newArr = new int[arr.length + 1];
+        for (int i = 0; i < pos; i++) {
+            newArr[i] = arr[i];
+        }
+
+        newArr[pos] = x;
+
+        for (int i = pos; i < arr.length; i++) {
+            newArr[i + 1] = arr[i];
+        }
+        return newArr;
+    }
+
+    // Задание 4. Циклы №6
+    public void reverse(int[] arr) {
+        for (int i = 0; i < arr.length / 2; i++) {
+            int New = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = New;
+        }
+
+        System.out.println("Результат: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    // Задание 4. Циклы №8
+    public int[] concat(int[] arr1, int[] arr2) {
+        int[] newArr = new int[arr1.length + arr2.length];
+
+        for (int i = 0; i < arr1.length; i++) {
+            newArr[i] = arr1[i];
+        }
+
+        for (int i = 0; i < arr2.length; i++) {
+            newArr[arr1.length + i] = arr2[i];
+        }
+
+        return newArr;
+    }
+
+    // Задание 4. Циклы №10
+    public int[] deleteNegative(int[] arr) {
+        int countPositive = 0;
+        for (int num : arr) {
+            if (num >= 0) {
+                countPositive++;
+            }
+        }
+
+        int[] newArr = new int[countPositive];
+        int index = 0;
+
+        for (int num : arr) {
+            if (num >= 0) {
+                newArr[index++] = num;
+            }
+        }
+
+        return newArr;
+    }
+}
