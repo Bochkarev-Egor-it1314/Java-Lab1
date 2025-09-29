@@ -1,14 +1,19 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class Tasks {
+public class Tasks
+{
     // Задание 1. Методы №2
-    public int sumLastNums(int x) {
-        if (x / 10 > 0) {
+    public int sumLastNums (int x)
+    {
+        if(x / 10 > 0)
+        {
             int last = x % 10; // последняя цифра
             int preLast = (x / 10) % 10; // предпоследняя цифра
             return last + preLast;
-        } else {
+        }
+        else
+        {
             System.out.println("Ошибка: число должно содержать хотя бы две цифры!");
             return 0;
         }
@@ -16,29 +21,35 @@ public class Tasks {
     }
 
     // Задание 1. Методы №4
-    public boolean isPositive(int x) {
+    public boolean isPositive(int x)
+    {
         return x > 0;
     }
 
     // Задание 1. Методы №6
-    public boolean isUpperCase(char x) {
+    public boolean isUpperCase(char x)
+    {
         return x >= 'A' && x <= 'Z';
     }
 
     // Задание 1. Методы №8
-    public boolean isDivisor(int a, int b) {
-        if (a == 0 || b == 0) {
+    public boolean isDivisor(int a, int b)
+    {
+        if (a == 0 || b == 0)
+        {
             return false; // деление на ноль исключаем
         }
         return (a % b == 0) || (b % a == 0);
     }
 
     // Задание 1. Методы №10
-    public int lastNumSum(int a, int b) {
+    public int lastNumSum(int a, int b)
+    {
         Scanner scanner = new Scanner(System.in);
         int total = (a % 10) + (b % 10);
         System.out.println(a + " + " + b + " = " + total);
-        for (int i = 1; i < 4; i++) {
+        for (int i = 1; i < 4; i++)
+        {
             System.out.println("Введите число: ");
             int next = scanner.nextInt();
             int result = (total % 10) + (next % 10);
@@ -49,48 +60,70 @@ public class Tasks {
     }
 
     // Задание 2. Условия №2
-    public double safeDiv(int x, int y) {
-        if (y == 0) {
+    public double safeDiv (int x, int y)
+    {
+        if (y == 0)
+        {
             return 0; // если делитель 0, возвращаем 0
-        } else {
+        }
+        else
+        {
             return x / y; // иначе выполняем деление
         }
     }
 
     // Задание 2. Условия №4
-    public String makeDecision(int x, int y) {
-        if (x > y) {
+    public String makeDecision (int x, int y)
+    {
+        if (x > y)
+        {
             return x + " > " + y;
-        } else if (x < y) {
+        }
+        else if (x < y)
+        {
             return x + " < " + y;
-        } else {
+        }
+        else
+        {
             return x + " = " + y;
         }
     }
 
     // Задание 2. Условия №6
-    public boolean sum3(int x, int y, int z) {
-        if (x + y == z || x + z == y || z + y == x) {
+    public boolean sum3 (int x, int y, int z)
+    {
+        if(x + y == z || x + z == y || z + y == x)
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
     // Задание 2. Условия №8
-    public String age(int x) {
-        if (x % 10 == 1 && x != 11) {
+    public String age (int x)
+    {
+        if(x % 10 == 1 && x != 11)
+        {
             return x + " год";
-        } else if ((x % 10 == 2 || x % 10 == 3 || x % 10 == 4) && x != 12 && x != 13 && x != 14) {
+        }
+        else if ((x % 10 == 2 || x % 10 == 3 || x % 10 == 4) && x != 12 && x != 13 && x != 14)
+        {
             return x + " года";
-        } else {
+        }
+        else
+        {
             return x + " лет";
         }
     }
 
     // Задание 2. Условия №10
-    public void printDays(String x) {
-        switch (x) {
+    public void printDays (String x)
+    {
+        switch (x)
+        {
             case "понедельник":
                 System.out.println("понедельник");
             case "вторник":
@@ -113,9 +146,11 @@ public class Tasks {
     }
 
     // Задание 3. Циклы №2
-    public String reverseListNums(int x) {
+    public String reverseListNums (int x)
+    {
         String s = "";
-        for (int i = x; i >= 0; i--) {
+        for(int i = x; i >= 0; i--)
+        {
             s = s + i + " ";
         }
 
@@ -123,10 +158,12 @@ public class Tasks {
     }
 
     // Задание 3. Циклы №4
-    public int pow(int x, int y) {
+    public int pow(int x, int y)
+    {
         int result = 1;
 
-        for (int i = 0; i < y; i++) {
+        for (int i = 0; i < y; i++)
+        {
             result *= x;  // умножаем result на x y раз
         }
 
@@ -134,13 +171,17 @@ public class Tasks {
     }
 
     // Задание 3. Циклы №6
-    public boolean equalNum(int x) {
+    public boolean equalNum (int x)
+    {
         int lastDigit = x % 10;
         x /= 10;
 
-        while (x > 0) {
+
+        while (x > 0)
+        {
             int currentDigit = x % 10;
-            if (currentDigit != lastDigit) {
+            if (currentDigit != lastDigit)
+            {
                 return false;
             }
             x /= 10;
@@ -150,31 +191,38 @@ public class Tasks {
     }
 
     // Задание 3. Циклы №8
-    public void leftTriangle(int x) {
+    public void leftTriangle (int x)
+    {
         String s = "";
-        for (int i = 1; i <= x; i++) {
+        for(int i = 1; i <= x; i++)
+        {
             s = s + "*";
             System.out.println(s);
         }
     }
 
     // Задание 3. Циклы №10
-    public void guessGame() {
+    public void guessGame()
+    {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        int rand = random.nextInt(0, 10);
+        int rand  = random.nextInt(0, 10);
 
         System.out.println("Введите число от 0-9:");
         int number = scanner.nextInt();
 
         int attempts = 1;
 
-        while (true) {
-            if (rand == number) {
+        while(true)
+        {
+            if(rand == number)
+            {
                 System.out.println("Вы угадали!");
                 System.out.println("Вы отгадали число за " + attempts + " попытки");
                 break;
-            } else {
+            }
+            else
+            {
                 System.out.println("Вы не угадали, введите число от 0 до 9:");
                 ++attempts;
                 number = scanner.nextInt();
@@ -182,11 +230,14 @@ public class Tasks {
         }
     }
 
-    // Задание 4. Массивы №2
-    public int findLast(int[] arr, int x) {
+    // Задание 4. Циклы №2
+    public int findLast (int[] arr, int x)
+    {
         // Проходим массив с конца
-        for (int i = arr.length - 1; i >= 0; i--) {
-            if (arr[i] == x) {
+        for (int i = arr.length - 1; i >= 0; i--)
+        {
+            if (arr[i] == x)
+            {
                 return i;
             }
         }
@@ -194,55 +245,67 @@ public class Tasks {
         return -1;
     }
 
-    // Задание 4. Массивы №4
-    public int[] add(int[] arr, int x, int pos) {
+    // Задание 4. Циклы №4
+    public int[] add(int[] arr, int x, int pos)
+    {
         int[] newArr = new int[arr.length + 1];
-        for (int i = 0; i < pos; i++) {
+        for (int i = 0; i < pos; i++)
+        {
             newArr[i] = arr[i];
         }
 
         newArr[pos] = x;
 
-        for (int i = pos; i < arr.length; i++) {
+        for (int i = pos; i < arr.length; i++)
+        {
             newArr[i + 1] = arr[i];
         }
         return newArr;
     }
 
-    // Задание 4. Массивы №6
-    public void reverse(int[] arr) {
-        for (int i = 0; i < arr.length / 2; i++) {
+    // Задание 4. Циклы №6
+    public void reverse (int[] arr)
+    {
+        for(int i = 0; i < arr.length / 2; i++)
+        {
             int New = arr[i];
             arr[i] = arr[arr.length - 1 - i];
             arr[arr.length - 1 - i] = New;
         }
 
         System.out.println("Результат: ");
-        for (int i = 0; i < arr.length; i++) {
+        for(int i = 0; i < arr.length; i++)
+        {
             System.out.print(arr[i] + " ");
         }
     }
 
-    // Задание 4. Массивы №8
-    public int[] concat(int[] arr1, int[] arr2) {
+    // Задание 4. Циклы №8
+    public int[] concat (int[] arr1,int[] arr2)
+    {
         int[] newArr = new int[arr1.length + arr2.length];
 
-        for (int i = 0; i < arr1.length; i++) {
+        for (int i = 0; i < arr1.length; i++)
+        {
             newArr[i] = arr1[i];
         }
 
-        for (int i = 0; i < arr2.length; i++) {
+        for (int i = 0; i < arr2.length; i++)
+        {
             newArr[arr1.length + i] = arr2[i];
         }
 
         return newArr;
     }
 
-    // Задание 4. Массивы №10
-    public int[] deleteNegative(int[] arr) {
+    // Задание 4. Циклы №10
+    public int[] deleteNegative(int[] arr)
+    {
         int countPositive = 0;
-        for (int num : arr) {
-            if (num >= 0) {
+        for (int num : arr)
+        {
+            if (num >= 0)
+            {
                 countPositive++;
             }
         }
@@ -250,8 +313,10 @@ public class Tasks {
         int[] newArr = new int[countPositive];
         int index = 0;
 
-        for (int num : arr) {
-            if (num >= 0) {
+        for (int num : arr)
+        {
+            if (num >= 0)
+            {
                 newArr[index++] = num;
             }
         }
@@ -260,13 +325,18 @@ public class Tasks {
     }
 
     // Проверка вводимого числа
-    private int readInt(Scanner scanner) {
-        while (true) {
+    private int readInt(Scanner scanner)
+    {
+        while (true)
+        {
             System.out.print("Введите целое число: ");
-            if (scanner.hasNextInt()) {
+            if (scanner.hasNextInt())
+            {
                 int num = scanner.nextInt();
                 return num;
-            } else {
+            }
+            else
+            {
                 System.out.println("Ошибка: введите целое число!");
                 scanner.next(); // очищаем неверный ввод
             }
@@ -274,29 +344,38 @@ public class Tasks {
     }
 
     // Метод чтения символа с клавиатуры
-    private char readChar(Scanner scanner) {
-        while (true) {
+    private char readChar(Scanner scanner)
+    {
+        while (true)
+        {
             System.out.print("Введите одну букву: ");
             String input = scanner.nextLine();
 
-            if (input.length() == 1 && Character.isLetter(input.charAt(0))) {
+
+            if (input.length() == 1 && Character.isLetter(input.charAt(0)))
+            {
                 return input.charAt(0);
-            } else {
+            }
+            else
+            {
                 System.out.println("Ошибка: нужно ввести одну букву!");
             }
         }
     }
 
     // Метод для вывода массива
-    public void printArray(int[] arr) {
-        for (int num : arr) {
+    public void printArray(int[] arr)
+    {
+        for (int num : arr)
+        {
             System.out.print(num + " ");
         }
         System.out.println();
     }
 
     // Главный метод
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println("Выберите задание: ");
         System.out.println("1) Задание 1. Методы №2 ");
         System.out.println("2) Задание 1. Методы №4 ");
@@ -313,11 +392,11 @@ public class Tasks {
         System.out.println("13) Задание 3. Циклы №6 ");
         System.out.println("14) Задание 3. Циклы №8 ");
         System.out.println("15) Задание 3. Циклы №10 ");
-        System.out.println("16) Задание 4. Массивы №2 ");
-        System.out.println("17) Задание 4. Массивы №4 ");
-        System.out.println("18) Задание 4. Массивы №6 ");
-        System.out.println("19) Задание 4. Массивы №8 ");
-        System.out.println("20) Задание 4. Массивы №10 ");
+        System.out.println("16) Задание 4. Циклы №2 ");
+        System.out.println("17) Задание 4. Циклы №4 ");
+        System.out.println("18) Задание 4. Циклы №6 ");
+        System.out.println("19) Задание 4. Циклы №8 ");
+        System.out.println("20) Задание 4. Циклы №10 ");
 
 
         Scanner scan = new Scanner(System.in);
@@ -326,32 +405,39 @@ public class Tasks {
         Tasks t = new Tasks();
         Scanner scanner = new Scanner(System.in);
 
-        if (scan.hasNextInt()) {
+        if (scan.hasNextInt())
+        {
             int choice = scan.nextInt();
 
-            switch (choice) {
-                case 1: {
+            switch(choice)
+            {
+
+                case 1:
+                {
                     int number = t.readInt(scanner); // читаем число
                     int result = t.sumLastNums(number); // считаем сумму
                     System.out.println("Сумма двух последних цифр числа " + number + " = " + result);
                     scanner.close();
                     break;
                 }
-                case 2: {
+                case 2:
+                {
                     int number = t.readInt(scanner); // читаем число
                     boolean result = t.isPositive(number);
                     System.out.println("Результат: " + result);
                     scanner.close();
                     break;
                 }
-                case 3: {
+                case 3:
+                {
                     char ch = t.readChar(scanner); // читаем букву
                     boolean result = t.isUpperCase(ch);
                     System.out.println("Результат: " + result);
                     scanner.close();
                     break;
                 }
-                case 4: {
+                case 4:
+                {
                     int number1 = t.readInt(scanner); // читаем 1 число
                     int number2 = t.readInt(scanner); // читаем 2 число
                     boolean result = t.isDivisor(number1, number2); // считаем сумму
@@ -359,7 +445,8 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 5: {
+                case 5:
+                {
                     System.out.println("Введите 2 числа:");
                     int number1 = scanner.nextInt(); // первое число
                     int number2 = scanner.nextInt(); // второе число
@@ -368,16 +455,19 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 6: {
+                case 6:
+                {
                     System.out.println("Введите 2 числа:");
                     int number1 = scanner.nextInt(); // первое число
+
                     int number2 = scanner.nextInt(); // второе число
                     double result = t.safeDiv(number1, number2);
                     System.out.println("Результат: " + result);
                     scanner.close();
                     break;
                 }
-                case 7: {
+                case 7:
+                {
                     System.out.println("Введите 2 числа:");
                     int number1 = scanner.nextInt(); // первое число
                     int number2 = scanner.nextInt(); // второе число
@@ -386,7 +476,8 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 8: {
+                case 8:
+                {
                     System.out.println("Введите 3 числа:");
                     int number1 = scanner.nextInt(); // первое число
                     int number2 = scanner.nextInt(); // второе число
@@ -396,7 +487,8 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 9: {
+                case 9:
+                {
                     System.out.println("Введите число:");
                     int number = scanner.nextInt();
                     String result = t.age(number);
@@ -404,7 +496,8 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 10: {
+                case 10:
+                {
                     System.out.println("Введите день недели:");
                     String day = scanner.nextLine();
                     System.out.println("Результат: ");
@@ -412,16 +505,17 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 11: {
+                case 11:
+                {
                     System.out.println("Введите число:");
-
                     int number = scanner.nextInt();
                     String result = t.reverseListNums(number);
                     System.out.println("Результат: " + result);
                     scanner.close();
                     break;
                 }
-                case 12: {
+                case 12:
+                {
                     System.out.println("Введите 2 числа:");
                     int number1 = scanner.nextInt(); // первое число
                     int number2 = scanner.nextInt(); // второе число
@@ -430,7 +524,8 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 13: {
+                case 13:
+                {
                     System.out.println("Введите число:");
                     int number = scanner.nextInt();
                     boolean result = t.equalNum(number);
@@ -438,7 +533,8 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 14: {
+                case 14:
+                {
                     System.out.println("Введите число:");
                     int number = scanner.nextInt();
                     System.out.println("Результат: ");
@@ -446,24 +542,25 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 15: {
+                case 15:
+                {
                     t.guessGame();
                     scanner.close();
                     break;
                 }
-                case 16: {
+                case 16:
+                {
                     System.out.println("Введите размер массива:");
                     int large = scanner.nextInt();
-                    if (large <= 0) {
-                        System.out.println("Ошибка");
-                        break;
-                    }
                     int[] arr = new int[large];
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         arr[i] = random.nextInt(0, 10);
                     }
                     System.out.println("Массив:");
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
+
                         System.out.print(arr[i] + " ");
                     }
                     System.out.println();
@@ -475,19 +572,18 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 17: {
+                case 17:
+                {
                     System.out.println("Введите размер массива:");
                     int large = scanner.nextInt();
-                    if (large <= 0) {
-                        System.out.println("Ошибка");
-                        break;
-                    }
                     int[] arr = new int[large];
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         arr[i] = random.nextInt(0, 10);
                     }
                     System.out.println("Массив:");
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         System.out.print(arr[i] + " ");
                     }
                     System.out.println();
@@ -499,23 +595,21 @@ public class Tasks {
                     int[] result = t.add(arr, number, position);
                     t.printArray(result);
 
-
                     scanner.close();
                     break;
                 }
-                case 18: {
+                case 18:
+                {
                     System.out.println("Введите размер массива:");
                     int large = scanner.nextInt();
-                    if (large <= 0) {
-                        System.out.println("Ошибка");
-                        break;
-                    }
                     int[] arr = new int[large];
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         arr[i] = random.nextInt(0, 10);
                     }
                     System.out.println("Массив:");
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         System.out.print(arr[i] + " ");
                     }
                     System.out.println();
@@ -524,38 +618,36 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 19: {
+                case 19:
+                {
                     System.out.println("Введите размер массива 1:");
                     int large1 = scanner.nextInt();
-                    if (large1 <= 0) {
-                        System.out.println("Ошибка");
-                        break;
-                    }
                     int[] arr1 = new int[large1];
-                    for (int i = 0; i < large1; i++) {
+                    for(int i = 0; i < large1; i++)
+                    {
                         arr1[i] = random.nextInt(0, 10);
                     }
                     System.out.println("Массив:");
-                    for (int i = 0; i < large1; i++) {
+                    for(int i = 0; i < large1; i++)
+                    {
                         System.out.print(arr1[i] + " ");
                     }
                     System.out.println();
 
                     System.out.println("Введите размер массива 2:");
                     int large2 = scanner.nextInt();
-                    if (large2 <= 0) {
-                        System.out.println("Ошибка");
-                        break;
-                    }
                     int[] arr2 = new int[large2];
-                    for (int i = 0; i < large2; i++) {
+                    for(int i = 0; i < large2; i++)
+                    {
                         arr2[i] = random.nextInt(0, 10);
                     }
                     System.out.println("Массив:");
-                    for (int i = 0; i < large2; i++) {
+                    for(int i = 0; i < large2; i++)
+                    {
                         System.out.print(arr2[i] + " ");
                     }
                     System.out.println();
+
 
                     int[] result = t.concat(arr1, arr2);
                     System.out.print("Результат: arr=");
@@ -563,19 +655,18 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                case 20: {
+                case 20:
+                {
                     System.out.println("Введите размер массива:");
                     int large = scanner.nextInt();
-                    if (large <= 0) {
-                        System.out.println("Ошибка");
-                        break;
-                    }
                     int[] arr = new int[large];
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         arr[i] = random.nextInt(-9, 10);
                     }
                     System.out.println("Массив:");
-                    for (int i = 0; i < large; i++) {
+                    for(int i = 0; i < large; i++)
+                    {
                         System.out.print(arr[i] + " ");
                     }
                     System.out.println();
@@ -586,14 +677,16 @@ public class Tasks {
                     scanner.close();
                     break;
                 }
-                default: {
+                default:
+                {
                     break;
                 }
             }
-        } else {
+        }
+        else
+        {
             System.out.println("Ошибка: введите целое число!");
             scan.next(); // очищаем неверный ввод
         }
     }
 }
-
