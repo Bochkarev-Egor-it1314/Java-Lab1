@@ -1,0 +1,287 @@
+package ru.Bochkarev;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Tasks {
+    // Главный метод
+    public static void main(String[] args) {
+        System.out.println("Выберите задание: ");
+        System.out.println("1) Задание 1. Методы №2 ");
+        System.out.println("2) Задание 1. Методы №4 ");
+        System.out.println("3) Задание 1. Методы №6 ");
+        System.out.println("4) Задание 1. Методы №8 ");
+        System.out.println("5) Задание 1. Методы №10 ");
+        System.out.println("6) Задание 2. Условия №2 ");
+        System.out.println("7) Задание 2. Условия №4 ");
+        System.out.println("8) Задание 2. Условия №6 ");
+        System.out.println("9) Задание 2. Условия №8 ");
+        System.out.println("10) Задание 2. Условия №10 ");
+        System.out.println("11) Задание 3. Циклы №2 ");
+        System.out.println("12) Задание 3. Циклы №4 ");
+        System.out.println("13) Задание 3. Циклы №6 ");
+        System.out.println("14) Задание 3. Циклы №8 ");
+        System.out.println("15) Задание 3. Циклы №10 ");
+        System.out.println("16) Задание 4. Циклы №2 ");
+        System.out.println("17) Задание 4. Циклы №4 ");
+        System.out.println("18) Задание 4. Циклы №6 ");
+        System.out.println("19) Задание 4. Циклы №8 ");
+        System.out.println("20) Задание 4. Циклы №10 ");
+
+        System.out.println("Ввод задания: ");
+
+
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+
+        Task t = new Task();
+        Scanner scanner = new Scanner(System.in);
+
+        if (scan.hasNextInt()) {
+            int choice = scan.nextInt();
+
+            switch (choice) {
+
+                case 1: {
+                    int number = t.readInt(scanner); // читаем число
+                    int result = t.sumLastNums(number); // считаем сумму
+                    System.out.println("Сумма двух последних цифр числа " + number + " = " + result);
+                    scanner.close();
+                    break;
+                }
+                case 2: {
+                    int number = t.readInt(scanner); // читаем число
+                    boolean result = t.isPositive(number);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 3: {
+                    char ch = t.readChar(scanner); // читаем букву
+                    boolean result = t.isUpperCase(ch);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 4: {
+                    int number1 = t.readInt(scanner); // читаем 1 число
+                    int number2 = t.readInt(scanner); // читаем 2 число
+                    boolean result = t.isDivisor(number1, number2); // считаем сумму
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 5: {
+                    System.out.println("Введите 2 числа:");
+                    int number1 = scanner.nextInt(); // первое число
+                    int number2 = scanner.nextInt(); // второе число
+                    int result = t.lastNumSum(number1, number2);
+                    System.out.println("Итого: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 6: {
+                    System.out.println("Введите 2 числа:");
+                    int number1 = scanner.nextInt(); // первое число
+
+                    int number2 = scanner.nextInt(); // второе число
+                    double result = t.safeDiv(number1, number2);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 7: {
+                    System.out.println("Введите 2 числа:");
+                    int number1 = scanner.nextInt(); // первое число
+                    int number2 = scanner.nextInt(); // второе число
+                    String result = t.makeDecision(number1, number2);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 8: {
+                    System.out.println("Введите 3 числа:");
+                    int number1 = scanner.nextInt(); // первое число
+                    int number2 = scanner.nextInt(); // второе число
+                    int number3 = scanner.nextInt(); // третье число
+                    boolean result = t.sum3(number1, number2, number3);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 9: {
+                    System.out.println("Введите число:");
+                    int number = scanner.nextInt();
+                    String result = t.age(number);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 10: {
+                    System.out.println("Введите день недели:");
+                    String day = scanner.nextLine();
+                    System.out.println("Результат: ");
+                    t.printDays(day);
+                    scanner.close();
+                    break;
+                }
+                case 11: {
+                    System.out.println("Введите число:");
+                    int number = scanner.nextInt();
+                    String result = t.reverseListNums(number);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 12: {
+                    System.out.println("Введите 2 числа:");
+                    int number1 = scanner.nextInt(); // первое число
+                    int number2 = scanner.nextInt(); // второе число
+                    int result = t.pow(number1, number2);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 13: {
+                    System.out.println("Введите число:");
+                    int number = scanner.nextInt();
+                    boolean result = t.equalNum(number);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 14: {
+                    System.out.println("Введите число:");
+                    int number = scanner.nextInt();
+                    System.out.println("Результат: ");
+                    t.leftTriangle(number);
+                    scanner.close();
+                    break;
+                }
+                case 15: {
+                    t.guessGame();
+                    scanner.close();
+                    break;
+                }
+                case 16: {
+                    System.out.println("Введите размер массива:");
+                    int large = scanner.nextInt();
+                    int[] arr = new int[large];
+                    for (int i = 0; i < large; i++) {
+                        arr[i] = random.nextInt(0, 10);
+                    }
+                    System.out.println("Массив:");
+                    for (int i = 0; i < large; i++) {
+
+                        System.out.print(arr[i] + " ");
+                    }
+                    System.out.println();
+
+                    System.out.println("Введите число:");
+                    int number = scanner.nextInt();
+                    int result = t.findLast(arr, number);
+                    System.out.println("Результат: " + result);
+                    scanner.close();
+                    break;
+                }
+                case 17: {
+                    System.out.println("Введите размер массива:");
+                    int large = scanner.nextInt();
+                    int[] arr = new int[large];
+                    for (int i = 0; i < large; i++) {
+                        arr[i] = random.nextInt(0, 10);
+                    }
+                    System.out.println("Массив:");
+                    for (int i = 0; i < large; i++) {
+                        System.out.print(arr[i] + " ");
+                    }
+                    System.out.println();
+
+                    System.out.println("Введите число:");
+                    int number = scanner.nextInt();
+                    System.out.println("Введите позицию:");
+                    int position = scanner.nextInt();
+                    int[] result = t.add(arr, number, position);
+                    t.printArray(result);
+
+                    scanner.close();
+                    break;
+                }
+                case 18: {
+                    System.out.println("Введите размер массива:");
+                    int large = scanner.nextInt();
+                    int[] arr = new int[large];
+                    for (int i = 0; i < large; i++) {
+                        arr[i] = random.nextInt(0, 10);
+                    }
+                    System.out.println("Массив:");
+                    for (int i = 0; i < large; i++) {
+                        System.out.print(arr[i] + " ");
+                    }
+                    System.out.println();
+
+                    t.reverse(arr);
+                    scanner.close();
+                    break;
+                }
+                case 19: {
+                    System.out.println("Введите размер массива 1:");
+                    int large1 = scanner.nextInt();
+                    int[] arr1 = new int[large1];
+                    for (int i = 0; i < large1; i++) {
+                        arr1[i] = random.nextInt(0, 10);
+                    }
+                    System.out.println("Массив:");
+                    for (int i = 0; i < large1; i++) {
+                        System.out.print(arr1[i] + " ");
+                    }
+                    System.out.println();
+
+                    System.out.println("Введите размер массива 2:");
+                    int large2 = scanner.nextInt();
+                    int[] arr2 = new int[large2];
+                    for (int i = 0; i < large2; i++) {
+                        arr2[i] = random.nextInt(0, 10);
+                    }
+                    System.out.println("Массив:");
+                    for (int i = 0; i < large2; i++) {
+                        System.out.print(arr2[i] + " ");
+                    }
+                    System.out.println();
+
+
+                    int[] result = t.concat(arr1, arr2);
+                    System.out.print("Результат: arr=");
+                    t.printArray(result);
+                    scanner.close();
+                    break;
+                }
+                case 20: {
+                    System.out.println("Введите размер массива:");
+                    int large = scanner.nextInt();
+                    int[] arr = new int[large];
+                    for (int i = 0; i < large; i++) {
+                        arr[i] = random.nextInt(-9, 10);
+                    }
+                    System.out.println("Массив:");
+                    for (int i = 0; i < large; i++) {
+                        System.out.print(arr[i] + " ");
+                    }
+                    System.out.println();
+
+                    int[] result = t.deleteNegative(arr);
+                    System.out.print("Результат: ");
+                    t.printArray(result);
+                    scanner.close();
+                    break;
+                }
+                default: {
+                    break;
+                }
+            }
+        } else {
+            System.out.println("Ошибка: введите целое число!");
+            scan.next(); // очищаем неверный ввод
+        }
+    }
+}
